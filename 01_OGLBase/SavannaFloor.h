@@ -8,12 +8,14 @@
 #include "includes/VertexArrayObject.h"
 #include "includes/TextureObject.h"
 
+#define SAVANA_FLOOR_SIZE 40.0F
+
 class SavannaFloor {
 public:
 	SavannaFloor();
 	~SavannaFloor();
 
-	bool Init();
+	bool Init(float);
 	void Render(ProgramObject*, glm::mat4);
 
 private:
@@ -30,4 +32,5 @@ private:
 		glm::vec2 t;
 	};
 
+	glm::mat4 m_floor_world = glm::mat4(1.0f);
 };

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -72,7 +72,31 @@
     <ClInclude Include="Includes\GLDebugMessageCallback.h">
       <Filter>GL utilities</Filter>
     </ClInclude>
+    <ClInclude Include="Rocks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="SavannaFloor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BearGrylls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Lion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Confetti.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Zebra.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Zebras.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Trees.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -120,6 +144,30 @@
     <ClCompile Include="SavannaFloor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Rocks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BearGrylls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Confetti.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Zebra.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Zebras.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Trees.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lion.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="myFrag.frag">
@@ -128,10 +176,10 @@
     <None Include="myVert.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="skybox.vert">
+    <None Include="bg.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="skybox.frag">
+    <None Include="bg.frag">
       <Filter>Shaders</Filter>
     </None>
     <None Include="Includes\BufferObject.inl">
@@ -146,5 +194,7 @@
     <None Include="Includes\VertexArrayObject.inl">
       <Filter>GL utilities</Filter>
     </None>
+    <None Include="skybox.frag" />
+    <None Include="skybox.vert" />
   </ItemGroup>
 </Project>

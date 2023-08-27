@@ -12,20 +12,19 @@ SavannaFloor::~SavannaFloor(void) {
 
 }
 
-bool SavannaFloor::Init()
+bool SavannaFloor::Init(float floor_size)
 {
 	// textúra
-	m_floorTexture.FromFile("assets/savanna.jpg");
-
+	m_floorTexture.FromFile("assets/savanna.png");
 
 	// A talaj 4 csúcspontja
-	float a = 20;
+	float a = floor_size;
 
 	std::vector<Vertex>vertices;
 	vertices.push_back({ glm::vec3(-a, 0, a), glm::vec3(0, 1, 0), glm::vec2(0, 0) });
-	vertices.push_back({ glm::vec3(a, 0,  a), glm::vec3(0, 1, 0), glm::vec2(a / 2, 0) });
-	vertices.push_back({ glm::vec3(a, 0, -a), glm::vec3(0, 1, 0), glm::vec2(0, a / 2) });
-	vertices.push_back({ glm::vec3(-a, 0, -a), glm::vec3(0, 1, 0), glm::vec2(a / 2, a / 2) });
+	vertices.push_back({ glm::vec3(a, 0,  a), glm::vec3(0, 1, 0), glm::vec2(a/10, 0) });
+	vertices.push_back({ glm::vec3(a, 0, -a), glm::vec3(0, 1, 0), glm::vec2(0, a/10) });
+	vertices.push_back({ glm::vec3(-a, 0, -a), glm::vec3(0, 1, 0), glm::vec2(a/10, a/10) });
 
 	std::vector<int> indices = { 0, 1, 2, 2, 3, 0 };
 
@@ -50,16 +49,12 @@ bool SavannaFloor::Init()
 
 void SavannaFloor::Render(ProgramObject* m_program, glm::mat4 viewProj)
 {
-	m_program->Use();
-
 	m_FloorVao.Bind();
+
 	m_program->SetTexture("texImage", 0, m_floorTexture);
-	glm::mat4 floor = glm::mat4(1.0f);
+	m_program->SetUniform("MVP", viewProj * m_floor_world);
+	m_program->SetUniform("world", m_floor_world);
+	m_program->SetUniform("worldIT", glm::inverse(glm::transpose(m_floor_world)));
 
-	m_program->SetUniform("MVP", viewProj * floor);
-	m_program->SetUniform("world", floor);
-	m_program->SetUniform("worldIT", glm::inverse(glm::transpose(floor)));
 	glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, nullptr);
-
-	m_program->Unuse();
 }

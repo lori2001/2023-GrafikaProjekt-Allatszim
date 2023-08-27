@@ -10,6 +10,7 @@
 #include <imgui/imgui_impl_sdl_gl3.h>
 
 // standard
+
 #include <iostream>
 #include <sstream>
 
@@ -175,8 +176,29 @@ int main( int argc, char* args[] )
 				case SDL_KEYDOWN:
 					if (ev.key.keysym.sym == SDLK_ESCAPE)
 						quit = true;
+					if (ev.key.keysym.sym == SDLK_z)
+						app.SpawnZebras();
 					if (!is_keyboard_captured)
 						app.KeyboardDown(ev.key);
+					if (ev.key.keysym.sym == SDLK_b) {
+						// szentséges Bear Grylls megjelenik a szentségtelen szavanna fölött 
+						app.ShowBearGrylls();
+					}
+					if (ev.key.keysym.sym == SDLK_UP) {
+						app.MoveBearGrylls(0);
+					}
+					if (ev.key.keysym.sym == SDLK_DOWN) {
+						app.MoveBearGrylls(2);
+					}
+					if (ev.key.keysym.sym == SDLK_LEFT) {
+						app.MoveBearGrylls(1);
+					}
+					if (ev.key.keysym.sym == SDLK_RIGHT) {
+						app.MoveBearGrylls(3);
+					}
+					if (ev.key.keysym.sym == SDLK_RETURN) {
+						app.DropBearGrylls();
+					}
 					break;
 				case SDL_KEYUP:
 					if (!is_keyboard_captured)

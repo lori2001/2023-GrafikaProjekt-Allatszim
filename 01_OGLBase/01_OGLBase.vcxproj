@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -45,13 +45,13 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>T:\OGLPack\include;$(IncludePath)</IncludePath>
-    <LibraryPath>T:\OGLPack\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendor\OGLPack\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendor\OGLPack\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>T:\OGLPack\include;$(IncludePath)</IncludePath>
-    <LibraryPath>T:\OGLPack\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)vendor\OGLPack\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)vendor\OGLPack\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -86,6 +86,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BearGrylls.h" />
+    <ClInclude Include="Confetti.h" />
+    <ClInclude Include="Lion.h" />
+    <ClInclude Include="Lions.h" />
     <ClInclude Include="SavannaFloor.h" />
     <ClInclude Include="Includes\BufferObject.h" />
     <ClInclude Include="Includes\gCamera.h" />
@@ -99,12 +103,20 @@
     <ClInclude Include="Includes\TextureObject.h" />
     <ClInclude Include="Includes\VertexArrayObject.h" />
     <ClInclude Include="MyApp.h" />
-    <ClInclude Include="T:\OGLPack\include\imgui\imconfig.h" />
-    <ClInclude Include="T:\OGLPack\include\imgui\imgui.h" />
-    <ClInclude Include="T:\OGLPack\include\imgui\imgui_impl_sdl_gl3.h" />
-    <ClInclude Include="T:\OGLPack\include\imgui\imgui_internal.h" />
+    <ClInclude Include="Rocks.h" />
+    <ClInclude Include="$(SolutionDir)vendor\OGLPack\mgui\imconfig.h" />
+    <ClInclude Include="$(SolutionDir)vendor\OGLPack\imgui\imgui.h" />
+    <ClInclude Include="$(SolutionDir)vendor\OGLPack\imgui\imgui_impl_sdl_gl3.h" />
+    <ClInclude Include="$(SolutionDir)vendor\OGLPack\imgui\imgui_internal.h" />
+    <ClInclude Include="Trees.h" />
+    <ClInclude Include="Zebra.h" />
+    <ClInclude Include="Zebras.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BearGrylls.cpp" />
+    <ClCompile Include="Confetti.cpp" />
+    <ClCompile Include="Lion.cpp" />
+    <ClCompile Include="Lions.cpp" />
     <ClCompile Include="SavannaFloor.cpp" />
     <ClCompile Include="Includes\gCamera.cpp" />
     <ClCompile Include="Includes\GLconversions.cpp" />
@@ -116,16 +128,22 @@
     <ClCompile Include="Includes\VertexArrayObject.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyApp.cpp" />
+    <ClCompile Include="Trees.cpp" />
+    <ClCompile Include="Zebra.cpp" />
+    <ClCompile Include="Zebras.cpp" />
     <None Include="Includes\BufferObject.inl" />
     <None Include="Includes\ProgramObject.inl" />
     <None Include="Includes\TextureObject.inl" />
     <None Include="Includes\VertexArrayObject.inl" />
+    <None Include="bg.frag" />
+    <None Include="bg.vert" />
+    <ClCompile Include="Rocks.cpp" />
+    <ClCompile Include="$(SolutionDir)vendor\OGLPack\include\imgui\imgui.cpp" />
+    <ClCompile Include="$(SolutionDir)vendor\OGLPack\include\imgui\imgui_demo.cpp" />
+    <ClCompile Include="$(SolutionDir)vendor\OGLPack\include\imgui\imgui_draw.cpp" />
+    <ClCompile Include="$(SolutionDir)vendor\OGLPack\include\imgui\imgui_impl_sdl_gl3.cpp" />
     <None Include="skybox.frag" />
     <None Include="skybox.vert" />
-    <ClCompile Include="T:\OGLPack\include\imgui\imgui.cpp" />
-    <ClCompile Include="T:\OGLPack\include\imgui\imgui_demo.cpp" />
-    <ClCompile Include="T:\OGLPack\include\imgui\imgui_draw.cpp" />
-    <ClCompile Include="T:\OGLPack\include\imgui\imgui_impl_sdl_gl3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="myFrag.frag" />

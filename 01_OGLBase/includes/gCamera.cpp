@@ -119,7 +119,7 @@ void gCamera::KeyboardUp(SDL_KeyboardEvent& key)
 		if ( m_slow )
 		{
 			m_slow = false;
-			m_speed *= 4.0f;
+			m_speed *= 1.1f;
 		}
 		break;
 	case SDLK_w:
@@ -135,7 +135,7 @@ void gCamera::KeyboardUp(SDL_KeyboardEvent& key)
 
 void gCamera::MouseMove(SDL_MouseMotionEvent& mouse)
 {
-	if ( mouse.state & SDL_BUTTON_LMASK )
+	if ( mouse.state & SDL_BUTTON_LMASK)
 	{
 		UpdateUV(mouse.xrel/100.0f, mouse.yrel/100.0f);
 	}
